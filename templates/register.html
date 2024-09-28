@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block list %}
+<li><a href="/">Password Manager</a></li>
+<li><a href="/login">Log In</a></li>
+{% endblock %}
+{% block body %}
+    <div class="form">
+        <form action="/register" method="post" class="login-form">
+            <input type="text" autocomplete="off" autofocus name="username" placeholder="UserName">
+            <div>
+                <input type="password" autocomplete="off" name="password" placeholder="Password" id="password"><span class="toggle-button">👁️‍🗨️</span>
+            </div>
+            <div>
+                <input type="password" autocomplete="off" name="re-password" placeholder="Password Again" id="re-password"><span class="toggle-button_2">👁️‍🗨️</span>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block list %}
+    <li><a href="/">Password Manager</a></li>
+    <li><a href="/search">Search</a></li>
+    <li><a href="/table">Table</a></li>
+    <li><a href="/login">Logout</a></li>
+{% endblock %}
+{% block body %}
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>Site</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{row["user_name"]}}</td>
+                    <td>{{row["password"]}}</td>
+                    <td>{{row["site"]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

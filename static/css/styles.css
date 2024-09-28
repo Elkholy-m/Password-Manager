@@ -1,0 +1,329 @@
+/* || Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* || Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* || Variables */
+:root {
+    /* fonts */
+    --FF: "Nunito", "Roboto",sans-serif;
+    --FS: 2rem;
+
+    /* colors */
+    --BG-COLOR: black;
+    --COLOR: hsl(0, 0%, 96%);
+    --BG: var(--BG-COLOR) url("/static/img/BG1.jpg") no-repeat center center/cover;
+
+    /* Border */
+    --BORDER: 2px solid black;
+    --SHADOW: 0 0 10px black
+}
+
+/* || General css */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+textarea, button, input {
+    font: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--FF); 
+    font-size: var(--FS);
+    background: var(--BG);
+    color: var(--COLOR);
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+}
+
+table{
+    margin: 10px auto;
+    font-size: 0.8rem;
+}
+
+td {
+    font-size: 0.7rem;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+th {
+    letter-spacing: 0.1rem;
+}
+
+th, td {
+    border: 2px solid white;
+    border-collapse: collapse;
+    box-shadow: var(--SHADOW);
+    padding: 10px;
+    width: max-content;
+    height: 15vh;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+tr:last-child td:last-child{
+    border-bottom-right-radius: 10px;
+}
+
+tr:last-child td:first-child{
+    border-bottom-left-radius: 10px;
+}
+
+a:any-link {
+    text-decoration: none;
+    color: var(--COLOR);
+}
+
+a:hover, a:focus {
+    color: hsla(0, 0%, 96%, 0.489);
+}
+
+a:active {
+    color: firebrick;
+}
+
+.toggle-button {
+    cursor: pointer;
+}
+.toggle-button_2 {
+    cursor: pointer;
+}
+
+
+
+/* || Utility classes */
+.center {
+    text-align: center;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscrean {
+    position: absolute;
+    left: -10000px;
+}
+
+/* || Classes */
+
+.footer {
+    position: sticky;
+    bottom: 0px;
+    font-size: 15px;
+    z-index: 1;
+}
+
+.contianer{
+    height: fit-content;
+}
+
+.head_list_ul {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 20px 15px;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 0.5rem;
+    box-shadow: var(--SHADOW);
+    border-radius: 20px;
+}
+
+.form{
+    display: grid;
+    place-content: center;
+}
+
+.login-form {
+    min-height: 70vh;
+    min-width: 30vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:flex-start;
+    justify-content: space-evenly;
+    gap: 1em;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    box-shadow: var(--SHADOW);
+    padding: 2rem;
+}
+
+.login-form button {
+    color: dodgerblue;
+    width: fit-content;
+    font-size: 0.7rem;
+    height: 10vh;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    border: none;
+    box-shadow: var(--SHADOW);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.login-form button:focus-visible {
+    border: none;
+}
+
+.login-form input {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.6rem;
+    padding: 0.2rem;
+    margin-right: 10px;
+}
+
+.search {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 1em;
+
+    border: none;
+    box-shadow: var(--SHADOW);
+    width: 65vw;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    background-image: linear-gradient(to right,  dodgerblue, firebrick);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.search input {
+    width: 50vw;
+    font-size: 0.7rem;
+    background-color: whitesmoke;
+    padding: 3px 10px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: var(--SHADOW);
+}
+
+.search-icon {
+    display: inline;
+}
+
+#passwords {
+    display: grid;
+    place-content: center;   
+}
+
+#passwords ul {
+    width: 60vw;
+    list-style-type: none;
+    margin: 20px;
+    font-size: 0.7em;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: var(--SHADOW);
+}
+
+#passwords li {
+    margin: 7px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.create_btn {
+    font-size: 0.6em;
+    width: fit-content;
+    min-height: 35px;
+    box-shadow: var(--SHADOW);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.delete_btn {
+    background-color: transparent;
+    width:fit-content;
+    padding: 2px;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.delete_btn:hover, .delete_btn:focus {
+    color: rgba(180, 34, 34, 0.694)
+}
+
+.copy_btn {
+    background-color: transparent;
+    width:fit-content;
+    padding: 2px;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.copy_btn:hover, .copy_btn:focus {
+    color: rgb(0, 0, 0)
+}
+.copy_delete form {
+    display: inline;
+    margin: 0 3px;
+}
+
+.error_container {
+    background: whitesmoke url("/static/img/BG.jpg") no-repeat center center/cover;
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+}
+
+.error_container ul {
+    position: absolute;
+    top:0;
+    left: 0;
+    font-size: 1rem;
+}
+
+.add-btn {
+    display: grid;
+    place-content: center;
+}
+
+.submit-btn {
+    font-size: 0.6rem;
+    border-radius: 15px;
+    border: none;
+    background-color: whitesmoke;
+    cursor: pointer;
+    height: 7vh;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+    margin-left: 0.2rem;
+}

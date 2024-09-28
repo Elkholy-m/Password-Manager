@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block list %}
+<li><a href="/">Password Manager</a></li>
+<li><a href="/search">Search</a></li>
+<li><a href="/table">Table</a></li>
+<li><a href="/login">Logout</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="search">
+    <form action="/search" method="get">
+        <input type="search" id="search" autofocus autocomplete="off" name="q" placeholder="Search passwords">
+        <button type="submit" class="submit-btn">Search</button>
+    </form>
+</div>
+<div id="passwords">
+    <ul id="ul">
+        {% for password in passwords %}
+        <li>{{password["site"]}} 
+            <div class="copy_delete">
+                <form action="/search" method="post">
+                    <input type="hidden" id="textToCopy0" name="copy_btn" value="{{password['user_name']}}">
+                    <button type="submit" class="copy_btn" onclick="copyText0()"><i class="fa-solid fa-copy"></i></button>
+                </form>
+                <form action="/search" method="post">
+                    <input type="hidden" id="textToCopy1" name="copy_btn" value="{{password['password']}}">
+                    <button type="submit" class="copy_btn" onclick="copyText1()"><i class="fa-solid fa-copy"></i></button>
+                </form>
+                <form action="/search" method="post">
+                    <input type="hidden" name="delete_btn" value="{{password['site']}}">
+                    <button type="submit" class="delete_btn"><i class="fa-solid fa-x"></i></button>
+                </form>
+            </div>
+        </li>
+        <hr>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock%}
