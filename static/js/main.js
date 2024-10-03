@@ -36,6 +36,7 @@ async function copyText0() {
     try {
         const textArea = document.getElementById("textToCopy0");
         await navigator.clipboard.writeText(textArea.value);
+        alert("user_name copied!")
     } catch (err) {
         console.error("Failed to copy: ", err);
     }
@@ -44,6 +45,7 @@ async function copyText1() {
     try {
         const textArea = document.getElementById("textToCopy1");
         await navigator.clipboard.writeText(textArea.value);
+        alert("password copied!")
     } catch (err) {
         console.error("Failed to copy: ", err);
     }

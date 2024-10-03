@@ -1,2 +1,0 @@
-CREATE TABLE passwords (person_id INTEGER NOT NULL, user_name TEXT NOT NULL, password TEXT NOT NULL, site TEXT NOT NULL, FOREIGN KEY(person_id) REFERENCES log_in(id));
-CREATE TABLE log_in (id INTEGER NOT NULL, user_name TEXT NOT NULL UNIQUE, password TEXT NOT NULL, PRIMARY KEY (id));
