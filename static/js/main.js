@@ -34,7 +34,7 @@ eye2.addEventListener("click", function(){
 // })
 async function copyText0() {
     try {
-        const textArea = document.getElementById("textToCopy0");
+        let textArea = document.getElementById("textToCopy0");
         await navigator.clipboard.writeText(textArea.value);
         alert("user_name copied!")
     } catch (err) {
@@ -43,7 +43,7 @@ async function copyText0() {
 }
 async function copyText1() {
     try {
-        const textArea = document.getElementById("textToCopy1");
+        let textArea = document.getElementById("textToCopy1");
         await navigator.clipboard.writeText(textArea.value);
         alert("password copied!")
     } catch (err) {
